@@ -1,0 +1,105 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/rayudebug/uygulama/bot/bot.csproj": {}
+  },
+  "projects": {
+    "/home/rayudebug/uygulama/bot/bot.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/rayudebug/uygulama/bot/bot.csproj",
+        "projectName": "bot",
+        "projectPath": "/home/rayudebug/uygulama/bot/bot.csproj",
+        "packagesPath": "/home/rayudebug/.nuget/packages/",
+        "outputPath": "/home/rayudebug/uygulama/bot/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/rayudebug/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Emgu.CV": {
+              "target": "Package",
+              "version": "[4.12.0.5763, )"
+            },
+            "InputSimulator": {
+              "target": "Package",
+              "version": "[1.0.4, )"
+            },
+            "OpenAI": {
+              "target": "Package",
+              "version": "[2.3.0, )"
+            },
+            "OpenCV": {
+              "target": "Package",
+              "version": "[2.4.11, )"
+            },
+            "OpenCvSharp4": {
+              "target": "Package",
+              "version": "[4.11.0.20250506, )"
+            },
+            "Selenium.Support": {
+              "target": "Package",
+              "version": "[4.35.0, )"
+            },
+            "Selenium.WebDriver": {
+              "target": "Package",
+              "version": "[4.35.0, )"
+            },
+            "Selenium.WebDriver.ChromeDriver": {
+              "target": "Package",
+              "version": "[139.0.7258.13800, )"
+            },
+            "SharpInputSystem.Core": {
+              "target": "Package",
+              "version": "[0.5.16, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/9.0.308/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

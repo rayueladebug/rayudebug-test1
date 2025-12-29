@@ -1,0 +1,39 @@
+{
+    "database-client.autoSync": true,
+    "editor.minimap.enabled": false,
+    "editor.stickyScroll.enabled": false,
+    "workbench.colorTheme": "Default High Contrast",
+    "workbench.iconTheme": "vs-minimal",
+    "workbench.editor.showIcons": false,
+    "workbench.colorCustomizations": {
+        "toolbar.hoverBackground": "#BE0000",  // Red hover color
+        "editor.suggestWidget.background": "#000000",  // Optional: Black background for suggestions
+        "editor.suggestWidget.border": "#FF0000",  // Red border color for the suggestion box
+        "editor.suggestWidget.foreground": "#FF0000"  // Red text color
+    },
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": [
+                    "variable.language",   // Variables like function names
+                    "variable.other.local", // Local variables
+                    "keyword.other",       // Keywords in suggestions
+                    "meta.class"           // Classes in suggestions
+                ],
+                "settings": {
+                    "foreground": "#FF0000"  // Force red for all these scopes
+                }
+            }
+        ]
+    },
+    "workbench.settings.applyToAllProfiles": [
+        "workbench.colorTheme"
+    ],
+    "editor.fontFamily": "Hack, Consolas, 'Courier New', monospace",
+    "editor.fontSize": 14,
+    "editor.fontLigatures": true,
+    "terminal.integrated.fontFamily": "Hack, 'Courier New', monospace",
+    "terminal.integrated.fontLigatures": true,
+    "terminal.integrated.fontWeightBold": "bold",
+    "workbench.activityBar.location": "default"
+}

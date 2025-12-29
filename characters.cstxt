@@ -1,0 +1,38 @@
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Support.UI;
+using System;
+using System.Net;
+using System.Net.Sockets;
+using System.Text;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Globalization;
+using System.Linq;
+using System.Reflection;
+using System.Threading.Tasks;
+using OpenAI;
+using OpenAI.Chat;
+using OpenQA.Selenium.DevTools.V139.Page;
+using project.Models;
+using project.Utils;
+using project.AI;
+using OpenQA.Selenium.DevTools.V137.Runtime;
+using projet.Utils;
+using System.Drawing;
+using OpenQA.Selenium.DevTools.V137.Profiler;
+using OpenQA.Selenium.BiDi.BrowsingContext;
+using OpenQA.Selenium.DevTools.V137.Debugger;
+using OpenQA.Selenium.DevTools.V137.DOM;
+using System.Security.Cryptography;
+using OpenAI.Realtime;
+using Microsoft.VisualBasic;
+using System.Data;
+using System.Text.Json;
+using System.Security.Cryptography.X509Certificates;
+using System.Text.Json.Serialization;
+namespace project.Games;
+public class Character{
+    public Character
+}
