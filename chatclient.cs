@@ -34,7 +34,7 @@ namespace projet.Utils{
             byte[] buffer = new byte[1024];
             string name = Ask();
             int port = 6660;
-            thisclient.Connect("172.18.18.188", port);
+            thisclient.Connect("", port);
             thisstream = thisclient.GetStream();
             byte[] deneme = Encoding.UTF8.GetBytes(name);
             thisstream.Write(deneme, 0, deneme.Length);
