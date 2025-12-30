@@ -45,7 +45,7 @@ namespace projet.Utils{
             while(true){
                 try{
                     //int port = 6660;
-                    //thisclient.Connect(***"172.18.21.30"***, port);
+                    //thisclient.Connect(***"***.**.**.**"***, port);
                     //thisstream = thisclient.GetStream();
                     // byte[] buffer = new byte[1024];???
                     string userinput = Console.ReadLine();
