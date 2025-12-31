@@ -40,7 +40,7 @@ namespace project.Utils
         private static string apiKey;
         private static ChatClient chatClient;
         private static List<ChatMessage> messages = new();
-        private static string aibehavior = "Sen sadece tek cümle kurabilen ve bu kuralı asla bozmayan bir yardımcı yapay zekasın";
+        private static string aibehavior = "Sen Türkçe konuşan yardımcı bir AI asistanısın";
 
         public static async Task Run()
         {
@@ -59,8 +59,8 @@ namespace project.Utils
 
             LoadChatHistory();
             Console.WriteLine("ai chat bot");
-            Console.WriteLine("komutlar 'exit' = çıkış, 'clear' = geçmişi temizle, 'help' = yardım\n");
-            Console.WriteLine(aibehavior);
+            Console.WriteLine("komutlar 'exit' = cikis, 'clear' = gecmis temizle, 'help' = yardim\n");
+            Console.WriteLine(aibehavior,"\n");
 
             while (true)
             {
@@ -75,7 +75,7 @@ namespace project.Utils
                         return;
                     case "clear":
                         ClearChat();
-                        Console.WriteLine("gecmis temizlendi.\n");
+                        Console.WriteLine("gecmis temizlendi\n");
                         continue;
                     /*case "help":
                         Console.WriteLine("");
@@ -203,7 +203,7 @@ namespace project.Utils
 
             if (!File.Exists(ConfigFile))
             {
-                Console.Write("OpenAI API key girin: ");
+                Console.Write("openai api key girin: ");
                 apiKey = Console.ReadLine()?.Trim();
                 if (!string.IsNullOrEmpty(apiKey))
                 {
@@ -217,7 +217,7 @@ namespace project.Utils
 
             if (string.IsNullOrEmpty(apiKey))
             {
-                Console.WriteLine("API key gerekli!");
+                Console.WriteLine("api key gerekli!");
                 Environment.Exit(1);
             }
             // if (!File.Exists(configFile)){
@@ -295,7 +295,6 @@ namespace project.Utils
 
                     if (role != null)
                     {
-                        // Content'i güvenli şekilde al
                         string content = "";
                         try
                         {
@@ -352,7 +351,7 @@ namespace project.Utils
         private static void ClearChat()
         {
             messages.Clear();
-            messages.Add(new SystemChatMessage("Sen Türkçe konuşan yardımcı bir AI asistanısın."));
+            messages.Add(new SystemChatMessage("Sen Türkçe konuşan yardımcı bir AI asistanısın"));
 
             try
             {
