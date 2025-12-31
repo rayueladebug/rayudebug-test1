@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading;
 using System.Threading.Tasks;
 using OpenQA.Selenium.DevTools.V137.DeviceAccess;
@@ -67,9 +68,9 @@ namespace project.Games
         public void Start()
         {
             Console.CursorVisible = false;
-            InitializeBoard();
+            InitBoard();
             SpawnNewTetromino();
-            Task.Run(() => ProcessInput());  // Girişleri ayrı bir thread'de işleyelim
+            Task.Run(() => ProcessInput());  // Girişler ayrı thread'de işlenir
             Task.Run(() => MoveTetrominoDown()); // Hareketin akıcı olması için deneme (test)
             while (!gameOver)
             {
@@ -82,14 +83,14 @@ namespace project.Games
                 {
                     MoveTetrominoDown(); // Eğer aşağı hareket etmeli ise
                 }*/
-                Thread.Sleep(30); // Bu değer daha düşük olursa, daha hızlı tepki verir
+                Thread.Sleep(30); // Değer düştükçe hızlı tepki
             }
             Console.Clear();
-            Console.WriteLine("Game Over!");
+            Console.WriteLine("hayatbiti");
         }
 
         // Oyun tahtasını başlat
-        private void InitializeBoard()
+        private void InitBoard()
         {
             for (int y = 0; y < Height; y++)
             {
@@ -130,7 +131,7 @@ namespace project.Games
                     }
                     else
                     {
-                        Console.Write(" .");  // Boş hücreleri .
+                        Console.Write(" .");  // Boş taşlar
                     }
                 }
                 Console.WriteLine();
@@ -147,7 +148,12 @@ namespace project.Games
                     Console.Write("[]");  // Taşı ekranda çiz
                 }
             }
-            
+
+            // Skoru göster
+            Console.SetCursorPosition(0, 20);
+            Console.ForegroundColor = ConsoleColor.DarkBlue;
+            Console.WriteLine($"skor: {score}");
+            Console.ResetColor();
 
             Console.SetCursorPosition(0, 0);  // Konsolun üst sol köşesine geri dön
         }
@@ -285,7 +291,7 @@ namespace project.Games
                 {
                     RemoveLine(y);
                     ShiftLinesDown(y);
-                    score += 100;
+                    score += 100;  // Tahtanın sol altında gösterilecek skora ekle
                     y++;  // Daha önce kaydırılan satırı tekrar kontrol et
                 }
             }
@@ -296,7 +302,7 @@ namespace project.Games
         {
             for (int x = 0; x < Width; x++)
             {
-                if (board[y, x] == 0)  // Eğer bir boş hücre varsa, satır dolmamış demektir
+                if (board[y, x] == 0)  // Eğer bir boş taş varsa satır dolmamış demektir
                 {
                     return false;
                 }
@@ -307,10 +313,18 @@ namespace project.Games
         // Satırı temizle
         private void RemoveLine(int y)
         {
+            // Satırlar silinmeden önce kkısa süreli yeşil renk patlama efekti(Şu anda tüm tahtanın rengi değişiyor ilerde sadece satırın değişecek)
+            Console.ForegroundColor = ConsoleColor.Green;
+            for (int a = 0; a < Width; a++){
+                Console.SetCursorPosition(a, y);
+                Console.Write("[]");
+            }
+            Thread.Sleep(200);
+            Console.ResetColor();
             for (int x = 0; x < Width; x++)
             {
-                board[y, x] = 0;  // Satırdaki tüm hücreleri sıfırla
-            }
+                board[y, x] = 0;// Satırdaki tüm taşları sıfırla
+            } 
         }
 
         // Satırları aşağı kaydır
